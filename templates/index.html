@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Index
+{% endblock%}
+
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="center">
+
+        {% for blog in blogs %}
+
+        <div class="blogs">
+            <h2><a href="{{url_for('blog_details', id=blog.id)}}">{{blog.title}}</a></h2>
+            <p><a href="{{url_for('blog_details', id=blog.id)}}">{{blog.author}}</a></p>
+        </div>
+
+
+        {% endfor %}
+
+
+
+
+    </div>
+
+</div>
+
+{% endblock%}
